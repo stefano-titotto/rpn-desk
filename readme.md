@@ -35,6 +35,16 @@ La prima applicazione è una calcolatrice RPN implementata completamente nel bro
 - funzionalità tastierino numerico/tastiera
 - creare app minimale per desktop/laptop
 
-- inserire
+#### nuove funzionalità
+- ':' per inserire funzioni varie
+- '^' per elevare a potenza X^Y
+- trovare tasti per
+    - opposto
+    - inverso
+- rotazione stack con tasti alto e basso
+- 'h' per visualizzare finestra con lista funzioni
+
+- implementare formato visualizzazione numeri
+
 
 *Stefano Titotto*

@@ -1,6 +1,6 @@
 {
-    "short_name": "RPN",
-    "name": "RPN Calc",
+    "short_name": "RPN-DESK",
+    "name": "RPN Calc for Desktop",
     "icons": [
       {
         "src": "images/rpn_16.png",
@@ -23,8 +23,8 @@
         "sizes": "192x192"
       }
     ],
-    "id": "/JS-School",
-    "start_url": "/JS-School",
+    "id": "/rpn-desk",
+    "start_url": "/rpn-desk",
     "background_color": "#87CEFA",
     "display": "standalone",
     "scope": "/",
