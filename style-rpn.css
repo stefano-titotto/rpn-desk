@@ -1,0 +1,20 @@
+body {
+    font-family: system-ui;
+    background-color: #87cefa;
+    color: black;
+}
+table {
+    width: 100%;
+}
+tbody{
+    text-align: right;
+}
+td{
+    text-align: right;
+    border:1px dotted black;
+}
+
+
+/* .stack-frame{
+    float: left;
+}

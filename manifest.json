@@ -1,0 +1,35 @@
+{
+    "short_name": "RPN",
+    "name": "RPN Calc",
+    "icons": [
+      {
+        "src": "images/rpn_16.png",
+        "type": "image/png",
+        "sizes": "16x16"
+      },
+      {
+        "src": "images/rpn_100.png",
+        "type": "image/png",
+        "sizes": "100x100"
+      },
+      {
+        "src": "images/rpn_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "images/rpn_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "id": "/JS-School",
+    "start_url": "/JS-School",
+    "background_color": "#87CEFA",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#87CEFA",
+    "shortcuts": [
+   ],
+    "description": ""
+  }
