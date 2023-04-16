@@ -22,6 +22,7 @@ let operatori = [
   'Delete', // cancella tutto lo stack
   'P', // Pi
   '<', // inverti gli ultimi due elementi dello stack
+  'o', 'i', // opposto e inverso
 ]
 
 /* processa la pressione di un tasto */
