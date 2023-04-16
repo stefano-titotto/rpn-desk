@@ -121,6 +121,7 @@ function processa_tasto(tasto){
         enter_pressed = true;
         break;
       case 'P':
+        /* pi greco */
         if (enter_pressed){
           stack.pop();
           enter_pressed = false;
@@ -129,6 +130,7 @@ function processa_tasto(tasto){
         edit_mode = false;
         break;
       case '<':
+        /* XY swap */
         b = stack.pop()
         a = 0.
         if(stack.length){
@@ -139,7 +141,25 @@ function processa_tasto(tasto){
         edit_mode = false;
         enter_pressed = false;
         break;
-
+      case 'o':
+        /* opposto +/- */
+        stack.push(-stack.pop())
+        enter_pressed = false;
+        edit_mode = false;
+        break;
+      case 'i':
+        /* inverso "1/X" */
+        b = stack.pop()
+        if (b == 0){
+          console.log('DIV 0 ERROR');
+          edit_mode = false;
+          enter_pressed = false;
+          break;
+        }
+        stack.push(1/b);
+        edit_mode = false;
+        enter_pressed = false;
+        break;
       default:
         console.log(tasto, ' *not processed*')      
     }
