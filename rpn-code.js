@@ -23,7 +23,7 @@ let operatori = [
   'P', // Pi
   'ArrowLeft', 'ArrowRight', // inverti gli ultimi due elementi dello stack
   'o', 'i', // opposto e inverso
-  '^', // elevazione a potenza
+  '^', // elevazione a potenza Y^X
   'ArrowUp', 'ArrowDown', // scorrimento stack
   's', // somma tutti gli elementi dello stack
   'h', // visualizza finestra di help
@@ -167,9 +167,9 @@ function processa_tasto(tasto){
         enter_pressed = false;
         break;
       case '^':
-        /* elevazione a potenza X^Y*/
+        /* elevazione a potenza Y^X*/
         x = stack.pop();
-        stack.push(x**stack.pop());
+        stack.push(stack.pop()**x);
         edit_mode = false;
         enter_pressed = false;
         break;
