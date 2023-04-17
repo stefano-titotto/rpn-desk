@@ -21,8 +21,12 @@ let operatori = [
   'Backspace', // cancella cifra in fase di edit o ultimo elem stack
   'Delete', // cancella tutto lo stack
   'P', // Pi
-  '<', // inverti gli ultimi due elementi dello stack
+  'ArrowLeft', 'ArrowRight', // inverti gli ultimi due elementi dello stack
   'o', 'i', // opposto e inverso
+  '^', // elevazione a potenza
+  'ArrowUp', 'ArrowDown', // scorrimento stack
+  's', // somma tutti gli elementi dello stack
+  'h', // visualizza finestra di help
 ]
 
 /* processa la pressione di un tasto */
@@ -130,7 +134,8 @@ function processa_tasto(tasto){
         stack.push(Math.PI);
         edit_mode = false;
         break;
-      case '<':
+      case 'ArrowLeft':
+      case 'ArrowRight':
         /* XY swap */
         b = stack.pop()
         a = 0.
@@ -158,6 +163,35 @@ function processa_tasto(tasto){
           break;
         }
         stack.push(1/b);
+        edit_mode = false;
+        enter_pressed = false;
+        break;
+      case '^':
+        /* elevazione a potenza X^Y*/
+        x = stack.pop();
+        stack.push(x**stack.pop());
+        edit_mode = false;
+        enter_pressed = false;
+        break;
+      case 'ArrowDown':
+        /* scorrimento stack */
+        a = stack.pop();
+        stack.unshift(a);
+        edit_mode = false;
+        enter_pressed = false;
+        break;
+      case 'ArrowUp':
+        /* scorrimento stack */
+        a = stack.shift(a);
+        stack.push(a)
+        edit_mode = false;
+        enter_pressed = false;
+        break; 
+      case 's':
+        /* sommatoria */
+        a = stack.pop();
+        while (stack.length) { a += stack.pop() };
+        stack.push(a);
         edit_mode = false;
         enter_pressed = false;
         break;

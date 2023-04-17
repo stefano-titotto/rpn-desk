@@ -34,14 +34,13 @@ Versione minimale per desktop di calcolatrice RPN implementata completamente nel
     - Funzioni: sqrt, log, ln, exp, sin, cos, tan, asin, acos, atan
 
 - nuovi tasti: 
-    - 'o' opposto
-    - 'i' inverso
-    - '^' per elevare a potenza X^Y
+- 'o' opposto
+- 'i' inverso
+- '^' per elevare a potenza X^Y
  
-- rotazione stack con tasti alto e basso
-- 'h' per visualizzare finestra con lista funzioni
-
-- implementare formato visualizzazione numeri
+    - rotazione stack con tasti alto e basso
+    - 'h' per visualizzare finestra con lista funzioni
+    - implementare formato visualizzazione numeri
 
 
 *Stefano Titotto*
