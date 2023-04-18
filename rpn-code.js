@@ -27,6 +27,7 @@ let operatori = [
   'ArrowUp', 'ArrowDown', // scorrimento stack
   's', // somma tutti gli elementi dello stack
   'h', // visualizza finestra di help
+  'l', // lastx
 ]
 
 /* processa la pressione di un tasto */
@@ -57,6 +58,7 @@ function processa_tasto(tasto){
           a = stack.pop();
         }
         stack.push(a + b);
+        lastx = b;
         edit_mode = false;
         enter_pressed = false;
         break;
@@ -67,6 +69,7 @@ function processa_tasto(tasto){
           a = stack.pop();
         }
         stack.push(a - b);
+        lastx = b;
         edit_mode = false;
         enter_pressed = false;
         break;    
@@ -77,6 +80,7 @@ function processa_tasto(tasto){
           a = stack.pop();
         }
         stack.push(a * b);
+        lastx = b;
         edit_mode = false;
         enter_pressed = false;
         break;    
@@ -94,12 +98,13 @@ function processa_tasto(tasto){
           a = stack.pop();
         }
         stack.push(a / b);
+        lastx = b;
         edit_mode = false;
         enter_pressed = false;
         break;    
       case 'Backspace':
         /* se sono in fase di inserimento, elimino l'ultima cifra */
-        if (edit_mode){
+        if (edit_mode && stack[stack.length-1]!=0.){
           if (decimal_point==0){
             stack.push(Math.trunc(stack.pop()/10))
           }
@@ -111,16 +116,18 @@ function processa_tasto(tasto){
         else{
           /* se non sono in fase di inserimento, 
              elimino ultimo elemento dello stack */
-          stack.pop();
+          lastx = stack.pop();
           if (!stack.length){
             stack.push(0.);
           }
+          edit_mode = false;
+          enter_pressed = false;
         }
         break;
       case 'Delete':
         /* svuoto lo stack */
         while (stack.length){
-          stack.pop();
+          lastx = stack.pop();
         }
         stack.push(0.);
         enter_pressed = true;
@@ -170,6 +177,7 @@ function processa_tasto(tasto){
         /* elevazione a potenza Y^X*/
         x = stack.pop();
         stack.push(stack.pop()**x);
+        lastx = x;
         edit_mode = false;
         enter_pressed = false;
         break;
@@ -189,12 +197,18 @@ function processa_tasto(tasto){
         break; 
       case 's':
         /* sommatoria */
-        a = stack.pop();
+        lastx = stack.pop();
+        a = lastx;
         while (stack.length) { a += stack.pop() };
         stack.push(a);
         edit_mode = false;
         enter_pressed = false;
         break;
+      case 'l':
+        /* last x */
+        stack.push(lastx);
+        edit_mode = false;
+        enter_pressed = false;
       default:
         console.log(tasto, ' *not processed*')      
     }
@@ -229,6 +243,7 @@ let stack = [0.0, ];
 let edit_mode = false;
 let enter_pressed = true;
 let decimal_point = 0;
+let lastx = 0;
 
 stack_print();
 window.addEventListener('keydown', function (event){
@@ -237,7 +252,6 @@ window.addEventListener('keydown', function (event){
     processa_tasto(event.key)}
   }
   );
-
 
 /*
 function rpn(expression){

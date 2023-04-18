@@ -38,7 +38,7 @@ Versione minimale per desktop di calcolatrice RPN implementata completamente nel
 - 'i' inverso
 - '^' per elevare a potenza X^Y
  
-    - rotazione stack con tasti alto e basso
+- rotazione stack con tasti alto e basso
     - 'h' per visualizzare finestra con lista funzioni
     - implementare formato visualizzazione numeri
 
