@@ -28,6 +28,7 @@ let operatori = [
   's', // somma tutti gli elementi dello stack
   'h', // visualizza finestra di help
   'l', // lastx
+  ':', // enter command
 ]
 
 /* processa la pressione di un tasto */
@@ -209,6 +210,13 @@ function processa_tasto(tasto){
         stack.push(lastx);
         edit_mode = false;
         enter_pressed = false;
+        break;
+      case ':':
+        comando_input = true;
+        box = document.getElementById("cmd");
+        box.classList.add("showme");
+        box.focus();
+        break;
       default:
         console.log(tasto, ' *not processed*')      
     }
@@ -238,21 +246,62 @@ function inserisci_cifra(c){
   }
 }
 
+function comando(){
+  var box = document.getElementById("cmd");
+  let cmd = box.value
+  if (cmd.startsWith(':')){
+    cmd = cmd.substring(1)
+  }
+  // inserire azioni corrispondenti ai comandi
+  switch (cmd){
+    case 'exp':
+      lastx = stack.pop()
+      stack.push(Math.exp(lastx))
+      clear_command();
+      break;
+    default:
+      box.value = 'command '+cmd+' not found!';
+      setTimeout(function(){ 
+        clear_command(); 
+        }, 1000);
+    }
+}
+function clear_command(){
+  box.value = ''
+  comando_input = false;
+  box.classList.remove("showme");
+  enter_pressed = false;
+  stack_print();
+}
+
+// Prevenire il refresh al submit del form
+var form=document.getElementById("cmdForm");
+function submitForm(event){
+
+   //Preventing page refresh
+   event.preventDefault();
+}
+
+//Calling a function during form submission.
+form.addEventListener('submit', submitForm);
+
 /*** main code ***/
 let stack = [0.0, ];
 let edit_mode = false;
 let enter_pressed = true;
 let decimal_point = 0;
+let comando_input = false;
 let lastx = 0;
 
 stack_print();
 window.addEventListener('keydown', function (event){
   console.log(event.key);
-  if (operatori.includes(event.key)){
+  if (operatori.includes(event.key) & !comando_input){
     processa_tasto(event.key)}
   }
   );
 
+let box
 /*
 function rpn(expression){
   expression = expression.toLowerCase()

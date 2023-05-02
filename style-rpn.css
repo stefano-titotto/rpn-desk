@@ -14,7 +14,15 @@ td{
     border:1px dotted black;
 }
 
+.comando {
+    background-color: #87cefa;
+    width: 100%;
+    display:none;
+    visibility:hidden;
+}
 
-/* .stack-frame{
-    float: left;
+.showme
+{
+    display:inline;
+    visibility:visible;
 }
