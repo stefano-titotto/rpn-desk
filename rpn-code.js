@@ -31,6 +31,7 @@ let operatori = [
   ':', // enter command
 ]
 
+
 /* processa la pressione di un tasto */
 function processa_tasto(tasto){
   cifra = parseFloat(tasto);
@@ -220,6 +221,9 @@ function processa_tasto(tasto){
       default:
         console.log(tasto, ' *not processed*')      
     }
+    if (tasto!='Backspace' & tasto!='.'){
+      decimal_point = 0;
+    }
   }
   stack_print();
 }
@@ -259,6 +263,8 @@ function comando(){
       stack.push(Math.exp(lastx))
       clear_command();
       break;
+    case 'help':
+      show_help();
     default:
       box.value = 'command '+cmd+' not found!';
       setTimeout(function(){ 
