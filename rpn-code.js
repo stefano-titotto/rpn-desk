@@ -222,6 +222,8 @@ function processa_tasto(tasto){
         console.log(tasto, ' *not processed*')      
     }
     if (tasto!='Backspace' & tasto!='.'){
+      // per tutti i tasti che non siano Backspace e . devo resettare il punto decimale
+      // altrimenti mi inserisce numeri dopo la virgola.
       decimal_point = 0;
     }
   }
