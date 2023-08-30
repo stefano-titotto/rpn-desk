@@ -9,7 +9,11 @@ function stack_print(){
   for(let i = 0; i < stack.length; i++ ){
     var row = TableBody.insertRow();
     var cell = row.insertCell();
-    cell.innerHTML = Number(stack[i].toFixed(6));
+    //cell.innerHTML = Number(stack[i].toFixed(6));
+    cell.innerHTML = stack[i].toLocaleString();
+    if (decimal_point==1 && i==stack.length-1) {
+      cell.innerHTML += ','
+    }
   }
 }
 
