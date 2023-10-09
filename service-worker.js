@@ -1,5 +1,5 @@
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
+  navigator.serviceWorker.register("./service-worker.js");
 }
 self.addEventListener('install', (event) => {
     console.log('Inside the install handler:', event);
