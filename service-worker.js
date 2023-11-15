@@ -24,7 +24,7 @@ const appShellFiles = [
   './rpn-code.js',
   './service-worker.js',
   './style-rpn.css',
-  './images/rpn-16.
+  './images/rpn-16',
 ];
 
 self.addEventListener("install", (e) => {
