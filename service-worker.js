@@ -15,16 +15,15 @@ self.addEventListener('install', (event) => {
 */
 
 // Files to cache
-const cacheName = 'rpn-desk-cache';
+const cacheName = 'rpndesk-cache';
 const contentToCache = [
-  './ help.html',
-  './index.hrml',
+  './index.html',
   './manifest.json',
   './register-sw.js',
   './rpn-code.js',
   './service-worker.js',
   './style-rpn.css',
-  './images/rpn-16',
+  './images/rpn-16'
 ];
 
 self.addEventListener("install", (e) => {
