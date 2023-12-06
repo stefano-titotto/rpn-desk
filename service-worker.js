@@ -16,7 +16,7 @@ self.addEventListener('install', (event) => {
 
 // Files to cache
 const cacheName = 'rpn-desk-cache';
-const appShellFiles = [
+const contentToCache = [
   './ help.html',
   './index.hrml',
   './manifest.json',
