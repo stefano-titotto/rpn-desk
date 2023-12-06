@@ -1,7 +1,7 @@
 body {
     font-family: system-ui;
-    background-color: #87cefa;
-    color: black;
+    background-color: darkslategrey;
+    color: white;
 }
 table {
     width: 100%;
@@ -11,11 +11,11 @@ tbody{
 }
 td{
     text-align: right;
-    border:1px dotted black;
+    border:1px dotted gray;
 }
 
 .comando {
-    background-color: #87cefa;
+    background-color: darkslategrey;
     width: 100%;
     display:none;
     visibility:hidden;
