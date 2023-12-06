@@ -23,7 +23,7 @@ const contentToCache = [
   './rpn-code.js',
   './service-worker.js',
   './style-rpn.css',
-  './images/rpn-16'
+  './images/rpn-16.png'
 ];
 
 self.addEventListener("install", (e) => {
