@@ -25,10 +25,8 @@
     ],
     "id": "rpn-desk",
     "start_url": "https://stefano-titotto.github.io/rpn-desk/",
-    "background_color": "#87CEFA",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#87CEFA",
     "shortcuts": [
    ],
     "description": ""
