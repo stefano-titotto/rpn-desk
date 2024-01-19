@@ -11,7 +11,7 @@ tbody{
 }
 td{
     text-align: right;
-    border:1px dotted #black;
+    border:1px dotted black;
 }
 
 .comando {
