@@ -34,7 +34,8 @@ let operatori = [
   'Enter',
   'Backspace', // cancella cifra in fase di edit o ultimo elem stack
   'Delete', // cancella tutto lo stack
-  'P', // Pi
+  'P', // Pi greco
+  'r', // radice quadrata
   'ArrowLeft', 'ArrowRight', // inverti gli ultimi due elementi dello stack
   'o', 'i', // opposto e inverso
   '^', // elevazione a potenza Y^X
@@ -157,6 +158,17 @@ function processa_tasto(tasto){
         stack.push(Math.PI);
         edit_mode = false;
         break;
+      case 'r': // radice quadrata
+        if (stack[stack.length-1]<0){
+          console.log('SQRT NEGATIVE ERROR');
+          edit_mode = false;
+          enter_pressed = false;
+          break;
+        }
+        stack.push(Math.sqrt(stack.pop()));
+        edit_mode = false;
+        enter_pressed = false;
+        break;
       case 'ArrowLeft':
       case 'ArrowRight':
         /* XY swap */
@@ -231,6 +243,9 @@ function processa_tasto(tasto){
         box = document.getElementById("cmd");
         box.classList.add("showme");
         box.focus();
+        break;
+      case 'h': // help
+        show_help();
         break;
       default:
         console.log(tasto, ' *not processed*')      
@@ -326,3 +341,6 @@ window.addEventListener('keydown', function (event){
   }
   );
 
+function show_help(){ // mostra una finestra popup di help visualizzando il file help.html
+  var myWindow = window.open("help.html", "Help", "width=400, height=400");
+}
