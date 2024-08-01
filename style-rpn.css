@@ -1,7 +1,7 @@
 body {
-    font-family: "LCD", "Courier New", monospace;
-    background-color: #727d6b;
-    color: black;
+    font-family: "LCD", "Courier New", monospace;    font-size: larger;
+    background-color: #30372b;
+    color: white;
 }
 table {
     width: 100%;
