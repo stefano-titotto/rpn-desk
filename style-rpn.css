@@ -1,6 +1,7 @@
 body {
-    font-family: "LCD", "Courier New", monospace;    font-size: larger;
-    background-color: #30372b;
+    font-family: Fira Code, Consolas, 'Courier New', monospace;    
+    font-size: larger;
+    background-color: #4A4142;
     color: white;
 }
 table {
