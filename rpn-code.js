@@ -198,7 +198,7 @@ function processa_tasto(tasto){
          elimino ultimo elemento dello stack */
       lastx = stack.pop();
       }
-    /*
+  
       if (enter_pressed ){
         if (lastx == 0){
           stack.pop();
@@ -206,7 +206,7 @@ function processa_tasto(tasto){
         stack.push(0.);
         //enter_pressed = false;
       }
-    */
+    
       // clear_prompt();
       stack_print();
       edit_mode = false;
